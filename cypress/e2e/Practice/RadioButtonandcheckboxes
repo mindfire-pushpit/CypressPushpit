@@ -1,0 +1,17 @@
+describe('check UI Elements',()=>{
+    it('checking Check Boxes',()=>{
+
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        cy.get('input[name="username"]').type('Admin')
+        cy.get('input[name="password"]').type('admin123')
+        cy.get('button[type="submit"]').should('not.be.disabled')
+        cy.get('button[type="submit"]').click()
+        cy.get('img[alt="client brand banner"]').first().should('be.visible')
+
+        cy.get('a[href*="viewAdminModule"]').click()
+        cy.url().should('contain','viewSystemUsers')
+
+        cy.get('div[class="oxd-table-card"] input').first().click({force:true}).should('be.checked')
+        cy.get('div[class="oxd-table-card"] input').first().click({force:true}).should('not.be.checked')
+    })
+})
