@@ -13,4 +13,17 @@ describe('Handling Iframes', ()=>{
         cy.get('[aria-label="Bold"]').click();
         cy.wait(5000)
     })
+
+    // By using custom Command
+    it('Iframes Apporach 2',()=>{
+                     
+        cy.visit('https://the-internet.herokuapp.com/iframe')
+
+        cy.getIframe('iframe[id="mce_0_ifr"]')
+        .clear()
+        .type('PushpitAgarwal {cmd+a}');
+
+        cy.get('[aria-label="Bold"]').click();
+        cy.wait(5000)
+    })
 })
