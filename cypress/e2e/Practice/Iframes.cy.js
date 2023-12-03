@@ -8,7 +8,9 @@ describe('Handling Iframes', ()=>{
         .should('be.visible')
         .then(cy.wrap);
 
-        iframe.clear().type('Pushpit Agarwal');
+        iframe.clear().type('Pushpit Agarwal {cmd+a}');
+
+        cy.get('[aria-label="Bold"]').click();
         cy.wait(5000)
     })
 })
