@@ -1,5 +1,5 @@
 describe('Handling Iframes', ()=>{
-    it('Iframes Apporach 1',()=>{
+    it.skip('Iframes Apporach 1',()=>{
                      
         cy.visit('https://the-internet.herokuapp.com/iframe')
 
@@ -16,6 +16,18 @@ describe('Handling Iframes', ()=>{
 
     // By using custom Command
     it('Iframes Apporach 2',()=>{
+                     
+        cy.visit('https://the-internet.herokuapp.com/iframe')
+
+        cy.getIframe('iframe[id="mce_0_ifr"]')
+        .clear()
+        .type('PushpitAgarwal {cmd+a}');
+
+        cy.get('[aria-label="Bold"]').click();
+        cy.wait(5000)
+    })
+
+    it('Iframes Apporach 3- Using Cypress Iframe Plugin',()=>{
                      
         cy.visit('https://the-internet.herokuapp.com/iframe')
 
