@@ -9,5 +9,6 @@ describe('Handling Iframes', ()=>{
         .then(cy.wrap);
 
         iframe.clear().type('Pushpit Agarwal');
+        cy.wait(5000)
     })
 })
