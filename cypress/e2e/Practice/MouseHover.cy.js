@@ -7,3 +7,5 @@ describe('Mouse Hover', ()=>{
        
     })
 })
+
+// MouseHover events are not supported in cypress use Query of force action to click any hidden element
