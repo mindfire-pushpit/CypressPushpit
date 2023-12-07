@@ -28,7 +28,7 @@ describe('Handling Iframes', ()=>{
         cy.wait(5000)
     })
 
-    it.only('Iframes Apporach 3- Using Cypress Iframe Plugin',()=>{
+    it('Iframes Apporach 3- Using Cypress Iframe Plugin',()=>{
                      
         cy.visit('https://the-internet.herokuapp.com/iframe')
 
@@ -36,4 +36,12 @@ describe('Handling Iframes', ()=>{
 
         cy.iframe('iframe[id="mce_0_ifr"]').clear().type("Pushpit Agarwal");
     })
+
+    it.only("test iframe using plugin", ()=>{
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    
+        cy.frameLoaded('#courses-iframe') //load the frame
+        cy.iframe().find('a[href="mentorship"]').first().click();
+        cy.iframe().find('div[class="inner-box"] h1').should('have.text', 'Mentorship')
+      })
 })
