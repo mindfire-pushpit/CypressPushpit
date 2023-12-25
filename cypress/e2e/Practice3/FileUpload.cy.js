@@ -29,15 +29,25 @@ describe('My Test Suite',()=>{
       })
 
       //for shadowdom upload use  { includeShadowDom:true } inside the get method
-      it.only("File Upload in Shadow Dom", ()=>{
+      it("File Upload in Shadow Dom", ()=>{
         cy.visit("https://www.htmlelements.com/demos/fileupload/shadow-dom/index.htm")
     
         cy.get('input[class="smart-browse-input"]', {includeShadowDom:true}).attachFile('screen1.png')
         cy.wait(5000)
         cy.get('span[class="smart-item-name"]', { includeShadowDom:true }).contains('screen1.png')
-       
-        // cy.get('smart-ui-file-upload').shadow().find('smart-file-upload').find('div[class="smart-container"]').find('div[class="smart-file-upload-footer"]').find('smart-button[class*="smart-upload-all-button"]').click()
     
         cy.get('smart-button[class*="smart-upload-all-button"]', {includeShadowDom:true}).click()
       })
+
+     // using selectFile Method
+
+      it.only("Single file upload not Using Fixture", ()=>{
+        cy.visit("https://the-internet.herokuapp.com/upload")
+
+        cy.get('input#file-upload').selectFile('cypress/fixtures/screen1.png')
+        cy.get('input#file-submit').click()
+        cy.get('div[class="example"] h3').should('have.text', 'File Uploaded!', { timeout:20000 })
+
+  })
+
 })
