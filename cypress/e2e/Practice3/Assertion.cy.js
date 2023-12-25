@@ -30,11 +30,6 @@ describe("Assertions",()=>{
         
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
       
-        // cy.get('input[name="username"]').then((ele)=>
-        // {
-        //     expect(ele).to.empty();
-        // })
-
         cy.viewport(100,200)
         cy.get('input[name="username"]').should('be.empty');
         cy.get('input[placeholder="Username"]').type("Admin")
@@ -43,12 +38,19 @@ describe("Assertions",()=>{
 
         let name='CYZ';
 
+        //BDD style assertions
+
         cy.get('p[class="oxd-userdropdown-name"]').then((ele)=>{
 
             console.log(ele.text());
 
             expect(ele.text()).to.not.equal(name);
         })
+
+        //TDD style assertions:
+
+    
+
 
         
     })

@@ -17,7 +17,7 @@ describe("Accessing fixture", ()=>{
         })
       })
     
-    // Access fixture data through hooks
+    // Access fixture data through hooks if we have use it in more than one it block.
      let userdata;
       before(()=>{
         cy.fixture("orangeHrm.json").then((data)=>{

@@ -6,7 +6,7 @@ describe('My Test Suite',()=>{
         cy.get('input[value="radio1"]').check()
         cy.get('input[value="radio2"]').should('not.be.checked')
         cy.get('input[value="radio1"]').should('be.checked')
-        // cy.get('input[value="radio1"]').uncheck()
+        // cy.get('input[value="radio1"]').uncheck() //uncheck does not work with radio buttons
 
         // cy.get('[type="checkbox"]').click({multiple:true})
 

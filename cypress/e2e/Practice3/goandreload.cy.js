@@ -14,6 +14,8 @@ describe('My test suite',()=>{
         cy.go(-1)
         cy.title().should('match',/Your Store/i)
 
+        
+
 
 
 
