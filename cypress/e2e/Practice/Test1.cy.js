@@ -20,4 +20,9 @@ describe("TextBox",()=>{
         cy.type('{enter}')
 
     })
+
+    it.only('Google Test',()=>{
+        cy.visit('https://www.google.com/');
+        cy.get('textarea[name="q"]').click().type('Flipkart');
+    })
 })

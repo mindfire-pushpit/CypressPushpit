@@ -19,6 +19,7 @@ import './commands'
 import 'cypress-mochawesome-reporter/register';
 
 import "cypress-real-events";
+import "cypress-file-upload";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
