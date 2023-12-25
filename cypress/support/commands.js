@@ -36,6 +36,17 @@ Cypress.Commands.add('getIframe',(iframe)=>{
 //custom command to click on link text
 
 
-Cypress.Commands.add('clickLink',(label)=>{
-    cy.get('a').contains(label).click()
-})
+// Cypress.Commands.add('clickLink',(label)=>{
+//     cy.get('a').contains(label).click()
+// })
+
+Cypress.Commands.add("Login", (username,password)=>{
+    cy.get('input[name="username"]').click()
+    cy.get('input[name="username"]').type(username)
+    cy.get('input[name="password"]').click()
+    cy.get('input[name="password"]').clear()
+    cy.get('input[name="password"]').type(password, { sensitive: true })
+    cy.get('button.orangehrm-login-button').click()
+    cy.get('.oxd-brand-banner > img').should('be.visible')
+  })
+  
