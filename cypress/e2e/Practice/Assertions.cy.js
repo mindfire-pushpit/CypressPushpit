@@ -19,6 +19,8 @@ describe("Assertions",()=>{
 
         // console.log(cy.get('div'))
 
+        cy.url().should('')
+
         // cy.get('div').should('have.length','26')
 
         cy.get('input[placeholder="Username"]').type('Pushpit')
@@ -35,5 +37,6 @@ describe("Assertions",()=>{
         cy.get('input[placeholder="Username"]').type("Admin")
         cy.get('input[name="password"]').type('admin123')
         cy.get('button[type="submit"]').click()
+        
     })
 })

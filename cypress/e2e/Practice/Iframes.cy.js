@@ -1,4 +1,4 @@
-import 'cypress-iframe'
+
 describe('Handling Iframes', ()=>{
     it.skip('Iframes Apporach 1',()=>{
                      

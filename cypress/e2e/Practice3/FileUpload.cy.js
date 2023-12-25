@@ -50,4 +50,6 @@ describe('My Test Suite',()=>{
 
   })
 
+  // for drag and drop using selectFile we have to write action:'drag-drop' inside select file
+
 })
