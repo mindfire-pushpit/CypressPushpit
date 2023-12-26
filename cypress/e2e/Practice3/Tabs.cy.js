@@ -1,7 +1,8 @@
 describe('Handle Tabs',()=>{
-    it.skip('Apporach 1',()=>{
+    it('Apporach 1',()=>{
         cy.visit('https://the-internet.herokuapp.com/windows')
-        cy.get('a[href="/windows/new"]').invoke('removeAttr', 'target').click();
+        cy.get('a[href="/windows/new"]').invoke('removeAttr', 'target');
+        cy.get('a[href="/windows/new"]').click();
 
         cy.url().should('include', 'the-internet.herokuapp.com/windows/new')
 

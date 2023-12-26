@@ -40,6 +40,11 @@ Cypress.Commands.add('getIframe',(iframe)=>{
 //     cy.get('a').contains(label).click()
 // })
 
+// Cypress.Commands.add('shadowGet', { prevSubject: 'element' }, (parentSubject, selector) => {
+//     return parentSubject.shadowDom().find(selector);
+//   });
+
+  
 Cypress.Commands.add("Login", (username,password)=>{
     cy.get('input[name="username"]').click()
     cy.get('input[name="username"]').type(username)
